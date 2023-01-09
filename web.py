@@ -35,11 +35,8 @@ st.text_input('', key="url")
 if st.button('Download'):
     url = st.session_state['url']
     file_format = st.session_state['file_format'].strip()
+    title = download_360p_mp4_videos(url,file_format)
 
-    if file_format == 'music':
-        title = download_360p_mp4_videos(url,"mp3")
-    else:
-        title = download_360p_mp4_videos(url,"mp4")
     
     
     
