@@ -30,7 +30,7 @@ st.write('this app is awesome')
 
 
 st.selectbox('Which file format?',('music', 'video'), key="file_format")
-st.text_input('', key="url")
+st.text_input(label='',placeholder='input youtube url here...', key="url")
 
 if st.button('Download'):
     url = st.session_state['url']
