@@ -15,11 +15,9 @@ def rename_file(out_file, file_ext):
 def download_360p_mp4_videos(url: str, file_format: str,outpath: str = "./"):
     yt = YouTube(url)
     if file_format == "music":
-        print('music-------------------------------')
         out_file = yt.streams.filter(only_audio=True).first().download(outpath)
         rename_file(out_file, "mp3")
     else:
-        print('video-------------------------------')
         out_file = yt.streams.filter(file_extension="mp4").get_by_resolution("360p").download(outpath)
         rename_file(out_file, "mp4")
     return yt.title
@@ -37,8 +35,6 @@ st.text_input('', key="url")
 if st.button('Download'):
     url = st.session_state['url']
     file_format = st.session_state['file_format'].strip()
-
-    st.write(file_format == 'music')
 
     if file_format == 'music':
         st.write('music')
