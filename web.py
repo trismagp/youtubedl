@@ -3,10 +3,8 @@ from pytube import YouTube
 from datetime import datetime
 import streamlit as st
 
-now = datetime.now()
-
-
 def rename_file(out_file, file_ext):
+    now = datetime.now()
     current_time = now.strftime("%Y%d%m_%H%M%S")
     base, ext = os.path.splitext(out_file)
     new_file = base + current_time + '.' + file_ext
@@ -22,15 +20,11 @@ def download_360p_mp4_videos(url: str, file_format: str,outpath: str = "./"):
         rename_file(out_file, "mp4")
     return yt.title
 
-
 st.title('My yt downloader')
 st.subheader('this is my music and video downloader')
 st.write('this app is awesome')
-
-
-
 st.selectbox('Which file format?',('music', 'video'), key="file_format")
-st.text_input(label='',placeholder='input youtube url here...', key="url")
+st.text_input(label='YT url',placeholder='input youtube url here...', key="url")
 
 if st.button('Download'):
     url = st.session_state['url']
