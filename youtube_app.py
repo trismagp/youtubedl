@@ -25,14 +25,14 @@ def download_360p_mp4_videos(url: str, file_format: str,outpath: str = "./"):
 
 
 
-label = sg.Text("Type in a to-do")
+label = sg.Text("Type in a youtube url")
 input_box = sg.InputText(tooltip="Enter a youtube url...", key = 'url')
 file_format_combo = sg.Combo(['music','video'],default_value='music',key='file_format')
 add_button = sg.Button("Download")
 list_box = sg.Text(key='titles',size=[70,10],background_color="grey")
 exit_button = sg.Button("Exit")
 
-window = sg.Window('My To-Do App',
+window = sg.Window('Youhou, I am a yt music and video downloader',
                 layout=[[label],[input_box],[add_button,file_format_combo],[list_box],[exit_button]],
                 font=('Helvetica',14))
 
