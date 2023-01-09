@@ -37,10 +37,8 @@ if st.button('Download'):
     file_format = st.session_state['file_format'].strip()
 
     if file_format == 'music':
-        st.write('music')
         title = download_360p_mp4_videos(url,"mp3")
     else:
-        st.write('video')
         title = download_360p_mp4_videos(url,"mp4")
     
     
